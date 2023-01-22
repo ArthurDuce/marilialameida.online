@@ -35,5 +35,23 @@ CNPJ: 32.075.015/0001-05 // © 2022 - Marilia Almeida. Todos os Direitos Reserva
   </div>
   <script type="text/javascript" src="script.js"></script>
 </script>
+
+<script>
+(function() {
+     const utmParamQueryString = new URLSearchParams(window.location.search);
+     if (utmParamQueryString.toString()) {
+          var navLinks = document.querySelectorAll('a');
+          navLinks.forEach(function(item) {
+               if (item.href.indexOf('https://marilialameida.online/') !== -1) {
+                    if (item.href.indexOf('?') === -1) {
+                         item.href += '?' + utmParamQueryString.toString();
+                    } else {
+                         item.href += '&' + utmParamQueryString.toString();
+                    }
+               }
+          });
+     }
+})();
+</script>
 </body>
 </html>
